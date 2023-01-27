@@ -1,41 +1,28 @@
 
 
 <!DOCTYPE html>
-<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
+<!--
+    <link th:href="@{/css/mainCSS.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/mainJS.js}"></script>-->
 </head>
 <body>
 테스트중!!
 
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table01">
-    <colgroup>
-        <col width="100%" />
-    </colgroup>
+<table>
+
     <thead>
-    <c:forEach var="list" items="${boardList}" varStatus="status">
-        <tr>
-            <c:choose>
-                <c:when test="${fn:length(boardList) != (status.index+1)}">
-                    <td ><p><c:out value="${list.title}"/></p></td>
-                    <td ><p><c:out value="${list.name}"/></p></td>
-                    <td ><p><c:out value="${list.content}"/></p></td>
-                    <td ><p><c:out value="${list.pass}"/></p></td>
-                </c:when>
-                <c:otherwise>
-                    <td ><p ><c:out value="${list.title}"/></p></td>
-                </c:otherwise>
-            </c:choose>
-        </tr>
-    </c:forEach>
-    <c:if test="${fn:length(boardList) == 0}">
-        <tr>
-            <td align="center">데이터가 존재하지 않습니다.</td>
-        </tr>
-    </c:if>
+
+            <tr th:each="item:${boardList}" >
+                <td th:text="${item.TITLE}" class="test"></td>
+                <td th:text="${item.NAME}"></td>
+                <td th:text="${item.IDX}"></td>
+                <td th:text="${item.PASS}"></td>
+            </tr>
     </thead>
 </table>
 </body>

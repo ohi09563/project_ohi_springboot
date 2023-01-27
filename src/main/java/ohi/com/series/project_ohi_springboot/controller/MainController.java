@@ -24,8 +24,17 @@ public class MainController {
     @Autowired
     private BoardService boardService;
 
-    @RequestMapping(value = "/home")
+
+
+
+    @RequestMapping(value = "/")
     public String main(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+        return "index";
+    }
+    @RequestMapping(value = "/home")
+    public String home(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 
 
@@ -36,6 +45,8 @@ public class MainController {
 
 
         List<HashMap<String,Object>> boardList = boardService.selectBoardList(commandMap);
+
+        System.out.println("boradList="+boardList);
 
         model.addAttribute("boardList",boardList);
 
