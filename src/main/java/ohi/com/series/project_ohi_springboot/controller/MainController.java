@@ -57,4 +57,57 @@ public class MainController {
 
         return "home";
     }
+
+    @RequestMapping(value = "/login")
+    public String login(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+
+
+        log.debug("================================================================");
+        log.debug("commandMap ==========>" + commandMap);
+        log.debug("login ==========>" );
+        log.debug("================================================================");
+
+
+
+        return "/login/login";
+    }
+
+    @RequestMapping(value = "/signup")
+    public String signup(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+
+
+        log.debug("================================================================");
+        log.debug("commandMap ==========>" + commandMap);
+        log.debug("signup ==========>" );
+        log.debug("================================================================");
+
+
+
+
+
+        return "login/signup";
+    }
+
+    @RequestMapping(value = "/signup_action")
+    public String signup_action(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+
+
+        log.debug("================================================================");
+        log.debug("commandMap ==========>" + commandMap);
+        log.debug("signup_action ==========>" );
+        log.debug("================================================================");
+
+
+
+
+
+        return "login/login";
+    }
+
 }
