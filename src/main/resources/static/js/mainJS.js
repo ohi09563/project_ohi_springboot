@@ -1,11 +1,11 @@
 function change_language(){
-    var selectedOption = document.getElementById(change_language);
+    var selectedOption = document.getElementById("change_language").value;
 
-    var selectValue = selectedOption.options[selectedOption.selectedIndex].value;
+/*    var selectValue = selectedOption.options[selectedOption.selectedIndex].value;*/
 
-    if(selectValue != ''){
-        window.location.replace('?lang='+selectValue);
+    if(selectedOption != ''){
+        window.location.replace('?lang='+selectedOption);
     }
 
-    alert(selectValue);
+    alert(selectedOption);
 }
