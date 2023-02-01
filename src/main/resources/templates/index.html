@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://thymeleaf.org">
+      xmlns:th="http://thymeleaf.org" th:with="lang=${#locale.language}" th:lang="${lang}">
 <head>
     <meta charset="UTF-8">
     <title>오형일홈페이지</title>
@@ -16,10 +16,22 @@
    <!--화면구조 메인페이지 1-5번 묶는 div-->
     <div class="main_headContainer" >
         <!--1-->
-        <div class="hct_1"><a href="login">로그인</a></div>
+        <div class="hct_1"><a th:href="@{/login}">로그인</a></div>
         <!--1끝-->
         <!--2-->
-        <div class="hct_2">언어변환</div>
+        <div class="hct_2">
+            <select name="chang_language" id="change_language" onchange="change_language()">
+
+
+                <option th:value='a'>언어변환</option>
+                <option  th:value='ko'>한국어</option>
+                <option  th:value='en'>영어</option>
+                <option th:value='etc'>기타</option>
+            </select>
+
+        </div>
+
+
         <!--2 끝-->
         <!--2-3 빈공간-->
         <div class="hct_blank"></div>

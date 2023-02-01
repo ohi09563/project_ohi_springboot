@@ -110,4 +110,22 @@ public class MainController {
         return "login/login";
     }
 
+
+    @RequestMapping(value = "/map")
+    public String map(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+
+
+        log.debug("================================================================");
+        log.debug("commandMap ==========>" + commandMap);
+        log.debug("signup_action ==========>" );
+        log.debug("================================================================");
+
+
+
+
+
+        return "goodPlace/map";
+    }
 }

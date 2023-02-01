@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org" th:with="lang=${#locale.language}" th:lang="${lang}">
+
+<head>
+
+  <title>맛집지도</title>
+  <link th:href="@{/css/common.css}" rel="stylesheet" />
+  <link th:href="@{/css/map.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+<nav>
+  <div>
+    <div>
+      <h1><a th:href="@{/mpa}">맛집지도</a></h1>
+
+      <div>
+        <!-- 비회원 -->
+        <div>
+          <a th:href="@{/signin}">로그인</a>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section>
+    <div>
+      <div>
+        <h2>맛집지도 카테고리를 선택해보세요</h2>
+        <div>
+          <button  id="korea">한식</button >
+          <button  id="china">중식</button>
+          <button  id="japan">일식</button>
+          <button  id="america">양식</button>
+          <button  id="wheat">분식</button>
+          <button  id="meat">구이</button>
+          <button  id="sushi">회/초밥</button>
+          <button  id="etc">기타</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 카테고리 -->
+  <div id="map" style="width: 1700px; height: 1000px;"></div>
+
+  <!-- 카카오지도 -->
+</main>
+
+<script
+        type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4de1b99d71324f8ad7221a3f1cc78797"
+></script>
+
+<script type="text/javascript" th:src="@{/js/map.js}"></script>
+</body>
+</html>
