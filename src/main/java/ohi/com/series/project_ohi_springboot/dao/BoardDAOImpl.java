@@ -21,4 +21,9 @@ public class BoardDAOImpl implements BoardDAO{
     public List<HashMap<String, Object>> selectBoardList(Map<String, Object> commandMap) throws Exception {
         return sqlSession.selectList(NameSpace+".selectBoardList", commandMap);
     }
+
+    @Override
+    public int selectBoardCount(Map<String, Object> commandMap) throws Exception {
+        return  sqlSession.selectOne(NameSpace+".selectBoardCount", commandMap);
+    }
 }

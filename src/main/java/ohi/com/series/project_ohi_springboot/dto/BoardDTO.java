@@ -18,8 +18,10 @@ public class BoardDTO {
     private String ofile;
     private String sfile;
     private int downcount;
-    private String pass;
+
     private int visitcount;
 
+    private String id;
+    private String pass;
 
 }

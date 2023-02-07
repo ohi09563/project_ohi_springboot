@@ -21,4 +21,8 @@ public class BoardServiceImpl implements BoardService {
     public List<HashMap<String, Object>> selectBoardList(Map<String, Object> commandMap) throws Exception {
         return boardDAO.selectBoardList(commandMap);
     }
+    @Override
+    public int selectBoardCount(Map<String, Object> commandMap) throws Exception {
+        return boardDAO.selectBoardCount(commandMap);
+    }
 }

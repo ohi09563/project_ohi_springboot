@@ -20,7 +20,7 @@
         <!--1끝-->
         <!--2-->
         <div class="hct_2">
-            <select name="chang_language" id="change_language" onchange="change_language()">
+            <label for="change_language"></label><select name="chang_language" id="change_language" onchange="change_language()">
 
 
                 <option th:value='a'>언어변환</option>
@@ -39,19 +39,19 @@
         <!--3-->
         <div class="hct_3">
             <!--스코어관리 시작-->
-            <div class="menu_1">스코어관리</div>
+            <div class="menu_1"><a th:href="@{/score}">스코어관리</a></div>
             <!--스코어관리 끝 -->
             <!--일정관리 시작-->
             <div class="menu_2">일정관리</div>
             <!--일정관리 끝-->
             <!--맛집리스트 시작-->
-            <div class="menu_3">맛집리스트</div>
+            <div class="menu_3"><a th:href="@{/map}">맛집리스트</a></div>
             <!--맛집리스트 끝-->
             <!--가계부 시작-->
             <div class="menu_4">가계부</div>
             <!--가계부 끝-->
             <!--게시판 시작-->
-            <div class="menu_5">게시판</div>
+            <div class="menu_5"><a th:href="@{/board}">게시판</a></div>
             <!--게시판 끝-->
             <!--채팅 시작-->
             <div class="menu_6">채팅</div>

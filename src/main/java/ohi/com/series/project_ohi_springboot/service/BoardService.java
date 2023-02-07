@@ -9,5 +9,6 @@ public interface BoardService {
 
 
     List<HashMap<String, Object>> selectBoardList(Map<String,Object> commandMap) throws Exception;
+    int selectBoardCount(Map<String,Object> commandMap) throws Exception;
 
 }

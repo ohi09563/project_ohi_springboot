@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko"/>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>오형일게시판</title>
+</head>
+<body>
+
+<table>
+
+    <thead>
+
+    <tr th:each="item:${boardList}" >
+        <td th:text="${item.TITLE}" class="test"></td>
+        <td th:text="${item.NAME}"></td>
+        <td th:text="${item.IDX}"></td>
+        <td th:text="${item.PASS}"></td>
+    </tr>
+    </thead>
+</table>
+
+</body>
+</html>

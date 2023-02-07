@@ -55,9 +55,26 @@
 
 <script
         type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4de1b99d71324f8ad7221a3f1cc78797"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4de1b99d71324f8ad7221a3f1cc78797&libraries=services"
 ></script>
 
 <script type="text/javascript" th:src="@{/js/map.js}"></script>
 </body>
 </html>
+
+
+
+<!--
+map 흐름도
+맨처음 index.html 맛집지도클릭 -> map.html ( 컨트롤러 통해)
+맨처음 화면 카테고리 선택 및 지도 표시
+
+맨처음 지도 우리집 (두암그린파크)
+
+카테고리 클릭시 전에 위도,경도 나오면서 지도 표시
+
+지도 하나 표시/ 여러개 표시/ 클릭시 정보 표시 / 검색 기능 /  4개지 기능
+
+맛집별로 별점 및 후기 남기는 페이지 작성(상세페이지)
+
+-->

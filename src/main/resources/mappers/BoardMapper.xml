@@ -5,13 +5,71 @@
 
 <mapper namespace="ohi.com.series.project_ohi_springboot.mappers.BoardMapper">
 
-
-    <select id="selectBoardList" resultType="java.util.HashMap" parameterType="java.util.Map">
+<!--x테스트용-->
+    <select id="selectBoardList2" resultType="java.util.HashMap" parameterType="java.util.Map">
 
 
             select * from ohiboard
 
 
     </select>
+
+
+
+
+
+
+    <select id="selectBoardCount" resultType="int" parameterType="java.util.Map">
+
+
+       select count(*) from Board
+
+        <if test="searchWord != null">
+           where #{searchField}  like '%'||#{searchwWord}||'%'
+        </if>
+
+
+    </select>
+
+
+    <select id="selectBoardList" resultType="java.util.HashMap" parameterType="java.util.Map">
+
+            select * from (
+
+                Select B1.*,ROWNUM rNum from(
+
+                    select * from Board
+                         <if test="searchWord != null">
+                                where #{searchFileId} Like '%'||#{searchWord}||'%'
+                         </if>
+                        order by idx desc
+                 )B1
+                 )
+                    <if test="startNum !=null and endNum != null">
+
+                        WHERE rNum BETWEEN #{startNum} AND  #{endNum}
+                    </if>
+
+
+
+<!--
+
+        SELECT * FROM (
+          SELECT Tb.*, ROWNUM rNum FROM (
+              SELECT * FROM Board
+        <if test="searchWord != null">
+               WHERE  #{searchField}
+                 LIKE '%'||#{searchwWord}||'%'
+
+        </if>
+                 ORDER BY idx DESC
+                    ) Tb
+         )
+        WHERE rNum BETWEEN ? AND ?
+-->
+
+
+    </select>
+
 
 </mapper>

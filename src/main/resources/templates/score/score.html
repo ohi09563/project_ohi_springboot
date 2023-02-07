@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko"/>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>스코어</title>
+</head>
+<body>
+
+<div>
+    <label for="chang_sports"></label>
+    <select name="chang_sports" id="chang_sports" onchange="chang_sports()">
+        <option  th:value="a">운동선택</option>
+        <option  th:value="Tennis">테니스</option>
+        <option  th:value="Table_Tennis">탁구</option>
+        <option  th:value="Swimming">수영</option>
+        <option  th:value="Golf">골프</option>
+        <option  th:value="Badminton">배드민턴</option>
+        <option  th:value="Foot_volleyball">족구</option>
+        <option  th:value="Soccer">축구</option>
+        <option  th:value="Health">개인기록(헬스)</option>
+        <option  th:value="Crossfit">크로스핏</option>
+    </select>
+
+
+</div>
+
+<div>
+    <a th:href="@{/}">메인페이지</a>
+</div>
+
+<!-- 참고 자료 나중에 데이터 insert 후 표출 방법-->
+<!--   <table>
+        <tr>
+            <th>#</th>
+            <th>이름</th>
+            <th>참가 인원</th>
+            <th>시작</th>
+            <th>종료</th>
+            <th>index 내용</th>
+        </tr>
+        <tr th:each="event , index: ${events}">
+            <td th:text="${index.index}">#</td>
+            <td th:text="${event.name}">이벤트 이름</td>
+            <td th:text="${event.limitOfEnrollment}">100</td>
+            <td th:text="${event.startDateTime}">2019년 1월 10일 오전 10시</td>
+            <td th:text="${event.endDateTime}">2019년 1월 10일 오전 12시</td>
+            <td th:text="${index}">index</td>
+        </tr>
+    </table>-->
+
+
+
+<!--테니스-->
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>날짜</th>
+                <th>시간</th>
+                <th>장소</th>
+                <th>게임종류</th>
+                <th>날씨</th>
+                <th>상대방</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <tr>
+            <td>
+                2023.02.06
+            </td>
+            <td>
+                16:50
+            </td>
+            <td>
+                전천후 테니스장
+            </td>
+            <td>
+                복식 /단식
+            </td>
+            <td>
+                맑음
+            </td>
+            <td>
+                사람이름
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<!--탁구-->
+<div>
+    <form th:action="@{/score/write/Table_Tennis}" th:object="${scoreDTO}" method="post">
+    <table>
+        <thead>
+        <tr>
+            <th>날짜</th>
+            <th>시간</th>
+            <th>장소</th>
+            <th>게임종류</th>
+            <th>날씨</th>
+            <th>상대방</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <tr>
+            <td>
+                2023.02.06
+
+                <!--자바스크립트로 현재 날짜 정해서 넣기-->
+                <input type="date"  th:field="*{date}">
+            </td>
+            <td>
+                16:50
+                <input type="time" th:field="*{time}">
+            </td>
+            <td>
+                두암탁구장
+                <input type="text" th:field="*{location}">
+            </td>
+            <td>
+                복식 /단식
+                <input type="text" th:field="*{type}">
+            </td>
+            <td>
+                맑음
+                <input type="text" th:field="*{weather}">
+            </td>
+            <td>
+                상대방
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <input type="text" th:field="*{name}">
+            </td>
+        </tr>
+
+
+        </tbody>
+
+    </table>
+        <button type="submit">등록</button>
+    </form>
+</div>
+        <!--골프-->
+        <div>
+
+
+        </div>
+        <!--배드민턴-->
+        <div>
+
+
+        </div>
+        <!--족구-->
+        <div>
+
+
+        </div>
+        <!--축구-->
+        <div>
+
+
+        </div>
+        <!--헬스-->
+        <div>
+
+
+        </div>
+
+        <!--크로스핏-->
+        <div>
+
+
+        </div>
+
+
+</body>
+</html>
