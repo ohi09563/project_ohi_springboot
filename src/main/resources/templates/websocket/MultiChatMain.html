@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko"/>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>멀티채팅</title>
+</head>
+<body>
+<script>
+
+    function chatWinOpen(){
+
+      let id = document.getElementById("chatId");
+      if(id.value==""){
+        /*나중에 id를 대화명으로 바꿀예정*/
+        alert("대화명 없음")
+
+        id.focus();
+        return;
+      }
+
+      window.open("/ChatWindow?chatId="+id.value,"","width=320,height=400");
+
+      id.value = "";
+    }
+</script>
+  <h2> 채팅창 연습</h2>
+  대화명 : <input type="text" id="chatId"/>
+  <button th:onclick="chatWinOpen();">채팅참여</button>
+
+</body>
+</html>

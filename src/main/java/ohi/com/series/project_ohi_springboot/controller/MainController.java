@@ -185,5 +185,42 @@ public class MainController {
 
 
 
+    @RequestMapping(value = "/chat")
+    public String chat(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+
+
+        log.debug("================================================================");
+        log.debug("commandMap ==========>" + commandMap);
+        log.debug("chat_action ==========>" );
+        log.debug("================================================================");
+
+
+
+
+
+        return "websocket/MultiChatMain";
+    }
+    @RequestMapping(value = "/ChatWindow")
+    public String chatWindow(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+
+        String chatId= request.getParameter("chatId");
+
+        log.debug("================================================================");
+        log.debug("commandMap ==========>" + commandMap);
+        log.debug("chatWindow_action ==========>" );
+        log.debug("================================================================");
+
+        model.addAttribute("chatId",chatId);
+
+
+
+        System.out.print(chatId);
+        return "websocket/ChatWindow";
+    }
+
 
 }
