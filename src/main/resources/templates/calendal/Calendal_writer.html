@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko"/>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>오형일홈페이지</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.6.3/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <!-- custom -->
+
+    <link th:href="@{/css/Calendal/custom_calendal.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/Calendal/custom_calendal.js}"></script>
+
+</head>
+<body>
+<div th:class = "group" th:id = "popupGroup">
+    <div th:class = "group-head">
+        <h1 th:class = "zTree-h1"> 일정 추가 </h1>
+    </div>
+    <div th:class = "group-body">
+        <form th:id = "scheduleData">
+            <div th:class = "top">
+                <input th:class = "subject" th:id = "subject" type = "text" th:name = "subject" placeholder="제목을 입력해주세요">
+            </div>
+            <div th:class = "domain">
+                <h3 th:class = "zTree-h3"> 시작 </h3>
+            </div>
+            <div th:class = "domain">
+                <input th:class = "date" th:id = "startDate" type = "text" th:name = "startDate" >
+            </div>
+            <div th:class = "domain">
+                <h3 th:class = "zTree-h3"> 종료 </h3>
+            </div>
+            <div th:class = "domain">
+                <input th:class = "date" th:id = "endDate" type = "text" th:name = "endDate" >
+            </div>
+            <div th:class = "domain">
+                <h3 th:class = "zTree-h3"> 메모 </h3>
+            </div>
+            <div th:class = "domain">
+                <textarea th:class = "memo" th:id = "memo" th:name = "memo" rows = "5" cols = "20" placeholder="100글자까지 입력 가능합니다"></textarea>
+            </div>
+        </form>
+        <button th:class = "ok-button" type= "button" onclick="click_ok();">확인</button>
+    </div>
+</div>
+</body>
+</html>

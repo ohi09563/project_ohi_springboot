@@ -222,5 +222,35 @@ public class MainController {
         return "websocket/ChatWindow";
     }
 
+    @RequestMapping(value = "/calendal")
+    public String calendal(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+
+        log.debug("================================================================");
+        log.debug("commandMap ==========>" + commandMap);
+        log.debug("calendal_action ==========>" );
+        log.debug("================================================================");
+
+
+
+        return "calendal/Calendal";
+    }
+
+
+    @RequestMapping(value = "/Calendal_writer")
+    public String Calendal_writer(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+
+        log.debug("================================================================");
+        log.debug("commandMap ==========>" + commandMap);
+        log.debug("Calendal_writer_action ==========>" );
+        log.debug("================================================================");
+
+
+
+        return "calendal/Calendal_writer";
+    }
 
 }

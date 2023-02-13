@@ -19,7 +19,11 @@
         return;
       }
 
-      window.open("/ChatWindow?chatId="+id.value,"","width=320,height=400");
+      let url ="/ChatWindow?chatId="+id.value;
+      let option =" width=320,height=400";
+
+
+      window.open(url,"",option);
 
       id.value = "";
     }
