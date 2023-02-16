@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko"/>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://thymeleaf.org">
+<head>
+
+  <!--구현 필요 전체/ 이번달 저번달/ 엑셀 저장/ 표 표출/ 입력표시 / 이번달, 저번달 비교/용도별 사용 비교  -->
+  <meta charset="UTF-8">
+  <title>오형일홈페이지</title>
+
+  <!--달력위해-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.6.3/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- datepicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+  <link th:href="@{/css/Calendal/custom_calendal.css}" rel="stylesheet" />
+  <script type="text/javascript" th:src="@{/js/Calendal/custom_calendal.js}"></script>
+
+  <!--달력위해-->
+
+  <script type="text/javascript" th:src="@{https://cdn.jsdelivr.net/npm/chart.js}"></script>
+
+
+  <script th:inline="javascript">
+
+  </script>
+
+
+
+</head>
+<body>
+<h1> 가계부</h1>
+<div>
+    <div>전체 가계부</div>
+    <div>이번달 가계부</div>
+    <div>저번달 가계부</div>
+    <div>
+      가계부 입력
+      <select>
+        <option>수입</option>
+        <option>지출</option>
+      </select>
+    </div>
+
+</div>
+
+
+
+<div>
+  <form id="finalcial_form_in">
+
+
+    <div>수입날짜입력</div>
+    <div th:class = "financial_custom">
+      <input th:class = "date" th:id = "startDate" type = "text" th:name = "startDate"  >
+    </div>
+    <div th:class = "financial_custom">
+      <input type = "text" th:name = "money" th:id ="money" th:placeholder="금액" >
+    </div>
+    <div>
+
+          <label>종류</label>
+        <select>
+          <option>미분류</option>
+          <option>주수입</option>
+          <option>부수입</option>
+          <option>전월이월</option>
+          <option>저축/보험</option>
+
+        </select>
+
+    </div>
+
+
+  </form>
+  <button th:class = "ok-button" type= "button" onclick="click_ok();">확인</button>
+</div>
+<div>
+  <form id="finalcial_form_out">
+
+
+    <div>지출날짜입력</div>
+    <div th:class = "financial_custom">
+      <input th:class = "date" th:id = "startDate" type = "text" th:name = "startDate"  >
+    </div>
+    <div th:class = "financial_custom">
+      <input type = "text" th:name = "money" th:id ="money" th:placeholder="금액" >
+    </div>
+    <div>
+
+      <label>종류</label>
+      <select>
+        <option>미분류</option>
+        <option>고정지출</option>
+        <option>특수지출</option>
+        <option>전월이월지출</option>
+        <option>저축/보험지출</option>
+        <option>음식/음료</option>
+
+      </select>
+
+    </div>
+
+
+  </form>
+  <button th:class = "ok-button" type= "button" onclick="click_ok();">확인</button>
+</div>
+<div>
+  <canvas id="myChart"></canvas>
+
+
+</div>
+
+<div>
+  <canvas id="myChart2"></canvas>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script th:inline="javascript">
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['1월', '2월', '3월', '4월', '5월', '6월','7월', '8월', '9월', '10월', '11월', '12월']
+      /*x 축데이터*/
+
+      ,
+      datasets: [{
+        label: '사용금액'
+        /*y축 데이터 설명*/
+        ,
+        data: [12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3]
+              /*y축 데이터*/
+
+        ,
+        borderWidth: 1
+      }
+
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+
+  const ctx2 = document.getElementById('myChart2');
+
+  new Chart(ctx2, {
+    type: 'pie',
+    data: {
+      labels: ['1월', '2월', '3월', '4월', '5월', '6월','7월', '8월', '9월', '10월', '11월', '12월']
+      /*x 축데이터*/
+
+      ,
+      datasets: [{
+        label: '사용금액'
+        /*y축 데이터 설명*/
+        ,
+        data: [12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3]
+        /*y축 데이터*/
+
+        ,
+        borderWidth: 1
+      }
+
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>

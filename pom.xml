@@ -30,7 +30,18 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>3.0.0</version>
 
+
+
         </dependency>
+
+<!-- 2023.02.14 종속성 에러
+  org.glassfish.json.JsonProviderImpl 에러로 인한 추가 -->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-websocket -->
         <dependency>

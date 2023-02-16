@@ -253,4 +253,21 @@ public class MainController {
         return "calendal/Calendal_writer";
     }
 
+    @RequestMapping(value = "/financial_ledger")
+    public String financial_ledger(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+
+        log.debug("================================================================");
+        log.debug("commandMap ==========>" + commandMap);
+        log.debug("financial_ledger_action ==========>" );
+        log.debug("================================================================");
+
+
+
+        return "financial_ledger/financial_ledger";
+    }
+
+
+
 }
