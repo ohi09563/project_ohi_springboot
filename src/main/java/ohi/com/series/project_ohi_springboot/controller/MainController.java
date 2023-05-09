@@ -2,6 +2,7 @@ package ohi.com.series.project_ohi_springboot.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import ohi.com.series.project_ohi_springboot.dto.BoardDTO;
 import ohi.com.series.project_ohi_springboot.dto.ScoreDTO;
 import ohi.com.series.project_ohi_springboot.service.BoardService;
 import org.apache.commons.logging.Log;
@@ -45,7 +46,7 @@ public class MainController {
         log.debug("================================================================");
 
 
-        List<HashMap<String,Object>> boardList = boardService.selectBoardList(commandMap);
+     /*   List<HashMap<String,Object>> boardList = boardService.selectBoardList(commandMap);
 
         System.out.println("boradList="+boardList);
 
@@ -53,12 +54,27 @@ public class MainController {
 
 
 
-
+*/
 
 
         return "home";
     }
 
+    @RequestMapping(value = "/tennis_user")
+    public String tennis_user(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+
+
+        log.debug("================================================================");
+        log.debug("commandMap ==========>" + commandMap);
+        log.debug("================================================================");
+
+
+
+
+        return "/user/tennis_user";
+    }
     @RequestMapping(value = "/login")
     public String login(Map<String,Object> commandMap, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
@@ -162,6 +178,9 @@ public class MainController {
         String searchFieId = request.getParameter("searchFieId");
         String searchWord = request.getParameter("searchWord");
 
+
+
+
         if(searchWord!= null){
 
             commandMap.put("searchFieId",searchFieId);
@@ -172,7 +191,9 @@ public class MainController {
 
         System.out.println(boardCount);
 
-        List<HashMap<String,Object>> boardList = boardService.selectBoardList(commandMap);
+        //List<HashMap<String,Object>> boardList = boardService.selectBoardList(commandMap);
+
+        List<BoardDTO> boardList= (List<BoardDTO>) boardService.selectBoardList(commandMap);
 
         System.out.println("boradList="+boardList);
 

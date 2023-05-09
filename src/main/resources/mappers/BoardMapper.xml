@@ -31,7 +31,8 @@
 
     </select>
 
-
+<!--
+  사용안함
     <select id="selectBoardList" resultType="java.util.HashMap" parameterType="java.util.Map">
 
             select * from (
@@ -52,24 +53,50 @@
 
 
 
-<!--
 
-        SELECT * FROM (
-          SELECT Tb.*, ROWNUM rNum FROM (
-              SELECT * FROM Board
-        <if test="searchWord != null">
-               WHERE  #{searchField}
-                 LIKE '%'||#{searchwWord}||'%'
-
-        </if>
-                 ORDER BY idx DESC
-                    ) Tb
-         )
-        WHERE rNum BETWEEN ? AND ?
+    </select>
 -->
 
 
-    </select>
 
+
+    <select id="selectBoardList" resultType="ohi.com.series.project_ohi_springboot.dto.BoardDTO" parameterType="java.util.Map">
+
+        select * from (
+
+        Select B1.*,ROWNUM rNum from(
+
+        select * from Board
+        <if test="searchWord != null">
+            where #{searchFileId} Like '%'||#{searchWord}||'%'
+        </if>
+        order by idx desc
+        )B1
+        )
+        <if test="startNum !=null and endNum != null">
+
+            WHERE rNum BETWEEN #{startNum} AND  #{endNum}
+        </if>
+
+
+
+        <!--
+
+                SELECT * FROM (
+                  SELECT Tb.*, ROWNUM rNum FROM (
+                      SELECT * FROM Board
+                <if test="searchWord != null">
+                       WHERE  #{searchField}
+                         LIKE '%'||#{searchwWord}||'%'
+
+                </if>
+                         ORDER BY idx DESC
+                            ) Tb
+                 )
+                WHERE rNum BETWEEN ? AND ?
+        -->
+
+
+    </select>
 
 </mapper>

@@ -52,7 +52,6 @@
 
 
 
-<!--테니스-->
 <div>
     <table>
         <thead>
@@ -94,10 +93,10 @@
 </div>
 
 
-<!--탁구-->
+<!--테니스-->
 <div>
     <form th:action="@{/score/write/Table_Tennis}" th:object="${scoreDTO}" method="post">
-    <table>
+    <table style="display: inline-block">
         <thead>
         <tr>
             <th>날짜</th>
@@ -113,29 +112,25 @@
         </tbody>
         <tr>
             <td>
-                2023.02.06
-
                 <!--자바스크립트로 현재 날짜 정해서 넣기-->
                 <input type="date"  th:field="*{date}">
             </td>
             <td>
-                16:50
                 <input type="time" th:field="*{time}">
             </td>
             <td>
-                두암탁구장
+
                 <input type="text" th:field="*{location}">
             </td>
             <td>
-                복식 /단식
                 <input type="text" th:field="*{type}">
             </td>
             <td>
-                맑음
+
                 <input type="text" th:field="*{weather}">
             </td>
             <td>
-                상대방
+
                 <select>
                     <option>1</option>
                     <option>2</option>
@@ -150,40 +145,359 @@
         </tbody>
 
     </table>
-        <button type="submit">등록</button>
+        <button type="submit" style="vertical-align: middle; margin-bottom: 20px;" >등록</button>
     </form>
+
 </div>
-        <!--골프-->
+
+
+<!--
+        &lt;!&ndash;골프&ndash;&gt;
         <div>
+            <form th:action="@{/score/write/golf}" th:object="${scoreDTO}" method="post">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>장소</th>
+                        <th>게임종류</th>
+                        <th>날씨</th>
+                        <th>상대방</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tr>
+                        <td>
+                            &lt;!&ndash;자바스크립트로 현재 날짜 정해서 넣기&ndash;&gt;
+                            <input type="date"  th:field="*{date}">
+                        </td>
+                        <td>
+                            <input type="time" th:field="*{time}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{location}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{type}">
+                        </td>
+                        <td>
+
+                            <input type="text" th:field="*{weather}">
+                        </td>
+                        <td>
+
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                            <input type="text" th:field="*{name}">
+
+                        </td>
+                    </tr>
+
+
+                    </tbody>
+
+                </table>
+                <button type="submit">등록</button>
+            </form>
+
+        </div>
+        &lt;!&ndash;배드민턴&ndash;&gt;
+
+
+
+        <div>
+
+            <form th:action="@{/score/write/Badminton}" th:object="${scoreDTO}" method="post">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>장소</th>
+                        <th>게임종류</th>
+                        <th>날씨</th>
+                        <th>상대방</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tr>
+                        <td>
+
+                            &lt;!&ndash;자바스크립트로 현재 날짜 정해서 넣기&ndash;&gt;
+                            <input type="date"  th:field="*{date}">
+                        </td>
+                        <td>
+                            <input type="time" th:field="*{time}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{location}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{type}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{weather}">
+                        </td>
+                        <td>
+
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                            <input type="text" th:field="*{name}">
+
+                        </td>
+                    </tr>
+
+
+                    </tbody>
+
+                </table>
+                <button type="submit">등록</button>
+            </form>
+        </div>
+        &lt;!&ndash;족구&ndash;&gt;
+
+        <div>
+
+            <form th:action="@{/score/write/foot_volleyball}" th:object="${scoreDTO}" method="post">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>장소</th>
+                        <th>게임종류</th>
+                        <th>날씨</th>
+                        <th>상대방</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tr>
+                        <td>
+
+                            &lt;!&ndash;자바스크립트로 현재 날짜 정해서 넣기&ndash;&gt;
+                            <input type="date"  th:field="*{date}">
+                        </td>
+                        <td>
+                            <input type="time" th:field="*{time}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{location}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{type}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{weather}">
+                        </td>
+                        <td>
+
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                            <input type="text" th:field="*{name}">
+
+                        </td>
+                    </tr>
+
+
+                    </tbody>
+
+                </table>
+                <button type="submit">등록</button>
+            </form>
+
+        </div>
+        &lt;!&ndash;축구&ndash;&gt;
+        <div>
+
+            <form th:action="@{/score/write/football}" th:object="${scoreDTO}" method="post">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>장소</th>
+                        <th>게임종류</th>
+                        <th>날씨</th>
+                        <th>상대방</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tr>
+                        <td>
+
+                            &lt;!&ndash;자바스크립트로 현재 날짜 정해서 넣기&ndash;&gt;
+                            <input type="date"  th:field="*{date}">
+                        </td>
+                        <td>
+
+                            <input type="time" th:field="*{time}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{location}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{type}">
+                        </td>
+                        <td>
+
+                            <input type="text" th:field="*{weather}">
+                        </td>
+                        <td>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                            <input type="text" th:field="*{name}">
+                        </td>
+                    </tr>
+
+
+                    </tbody>
+
+                </table>
+                <button type="submit">등록</button>
+            </form>
 
 
         </div>
-        <!--배드민턴-->
+        &lt;!&ndash;헬스&ndash;&gt;
         <div>
+            <form th:action="@{/score/write/health}" th:object="${scoreDTO}" method="post">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>장소</th>
+                        <th>게임종류</th>
+                        <th>날씨</th>
+                        <th>상대방</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tr>
+                        <td>
+
+                            &lt;!&ndash;자바스크립트로 현재 날짜 정해서 넣기&ndash;&gt;
+                            <input type="date"  th:field="*{date}">
+                        </td>
+                        <td>
+                            <input type="time" th:field="*{time}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{location}">
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{type}">
+                        </td>
+                        <td>
+
+                            <input type="text" th:field="*{weather}">
+                        </td>
+                        <td>
+
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                            <input type="text" th:field="*{name}">
+
+                        </td>
+                    </tr>
+
+
+                    </tbody>
+
+                </table>
+                <button type="submit">등록</button>
+            </form>
 
 
         </div>
-        <!--족구-->
+
+        &lt;!&ndash;크로스핏&ndash;&gt;
         <div>
+            <form th:action="@{/score/write/crossfit}" th:object="${scoreDTO}" method="post">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>장소</th>
+                        <th>게임종류</th>
+                        <th>날씨</th>
+                        <th>상대방</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
+                    </tbody>
+                    <tr>
+                        <td>
 
-        </div>
-        <!--축구-->
-        <div>
+                            &lt;!&ndash;자바스크립트로 현재 날짜 정해서 넣기&ndash;&gt;
+                            <input type="date"  th:field="*{date}">
+                        </td>
+                        <td>
+                            <input type="time" th:field="*{time}">
+                        </td>
+                        <td>
 
+                            <input type="text" th:field="*{location}">
+                        </td>
+                        <td>
 
-        </div>
-        <!--헬스-->
-        <div>
+                            <input type="text" th:field="*{type}">
+                        </td>
+                        <td>
 
+                            <input type="text" th:field="*{weather}">
+                        </td>
+                        <td>
 
-        </div>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                            <input type="text" th:field="*{name}">
 
-        <!--크로스핏-->
-        <div>
+                    </tr>
+                    </tbody>
 
+                </table>
+                <button type="submit">등록</button>
+            </form>
 
-        </div>
+        </div>-->
 
 
 </body>

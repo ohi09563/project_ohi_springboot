@@ -10,7 +10,12 @@ import java.util.Objects;
 public interface BoardDAO {
 
 
-    public List<HashMap<String,Object>> selectBoardList(Map<String, Object> commandMap) throws Exception;
+ //   public List<HashMap<String,Object>> selectBoardList(Map<String, Object> commandMap) throws Exception;
+
+
+    public  List<BoardDTO> selectBoardList(Map<String, Object> commandMap) throws Exception;
+
+
     public int selectBoardCount(Map<String, Object> commandMap) throws Exception;
 
 

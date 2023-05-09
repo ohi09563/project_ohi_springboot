@@ -1,6 +1,7 @@
 package ohi.com.series.project_ohi_springboot.dao;
 
 
+import ohi.com.series.project_ohi_springboot.dto.BoardDTO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,8 +18,14 @@ public class BoardDAOImpl implements BoardDAO{
     private SqlSession sqlSession;
     private static final String NameSpace= "ohi.com.series.project_ohi_springboot.mappers.BoardMapper";
 
-    @Override
+  /*  @Override
     public List<HashMap<String, Object>> selectBoardList(Map<String, Object> commandMap) throws Exception {
+        return (BoardDTO)sqlSession.selectList(NameSpace+".selectBoardList", commandMap);
+    }
+*/
+
+    @Override
+    public  List<BoardDTO> selectBoardList(Map<String, Object> commandMap) throws Exception {
         return sqlSession.selectList(NameSpace+".selectBoardList", commandMap);
     }
 
